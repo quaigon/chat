@@ -17,7 +17,7 @@ tools:context=".MessagesListActivity">
         android:layout_height="match_parent"
         android:layout_weight="8">
           <ListView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@android:id/list"
               android:transcriptMode="alwaysScroll"/>
@@ -33,7 +33,6 @@ tools:context=".MessagesListActivity">
             android:id="@+id/messageContent"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="sdadsaadas"
             android:layout_weight="1"/>
         <Button
             android:id="@+id/sendMessage"

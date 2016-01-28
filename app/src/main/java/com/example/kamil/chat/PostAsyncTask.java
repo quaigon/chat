@@ -24,7 +24,7 @@ public class PostAsyncTask extends RoboAsyncTask<Boolean> {
     private String nickName;
     private String message;
     private boolean newUser;
-    public static final String SERVERURL = "http://192.168.1.117:8080/EJBChatServlet/ServletMessage";
+    public static final String SERVERURL = "http://89.187.232.20:9000/EJBChatServlet/ServletMessage";
     Gson gson;
     public PostAsyncTask (Context context, String nickName, String message, boolean newUser) {
         super(context);

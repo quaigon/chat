@@ -1,5 +1,7 @@
 package com.example.kamil.chat;
 
+import roboguice.util.Ln;
+
 public class Message {
     public String nickname;
     public String text;
@@ -12,7 +14,12 @@ public class Message {
     }
 
     public String getDate() {
+        Ln.w(date);
         return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getNickname() {

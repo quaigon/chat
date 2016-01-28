@@ -3,21 +3,45 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:padding="5dp"
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:id="@+id/user_name"
-        android:text="stefan"
+        android:weightSum="1"
+        >
 
-        />
-    <TextView
+
+
+        <TextView
+            android:layout_weight="0.5"
+            android:padding="5dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/user_name"
+            android:text="stefan"
+            />
+
+        <TextView
+            android:gravity="right"
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/date"
+            android:text="543094309"
+            />
+
+
+    </LinearLayout>
+
+
+<TextView
         android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/message_content"
-        android:text="ty kupo gowna"
+        android:text="hej hej"
         />
 
 

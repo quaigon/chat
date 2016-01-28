@@ -20,7 +20,7 @@ import java.net.URLConnection;
 public class ConnectionService extends Service{
 
     int mStartMode;
-    public static final String URLL = "http://192.168.1.117:8080/EJBChatServlet/ServletMessage";
+    public static final String URLL = "http://89.187.232.20:9000/EJBChatServlet/ServletMessage";
 
 
     @Override
@@ -44,7 +44,6 @@ public class ConnectionService extends Service{
 
         @Override
         protected Void doInBackground(Void... params) {
-            Gson gson = new Gson();
             while (true ) {
                 String result = getOutputFromUrl(URLL);
                 publishProgress(result);

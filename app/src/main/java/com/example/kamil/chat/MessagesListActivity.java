@@ -18,7 +18,6 @@ import java.util.List;
 import roboguice.activity.RoboListActivity;
 import roboguice.inject.InjectExtra;
 import roboguice.inject.InjectView;
-import roboguice.util.Ln;
 
 public class MessagesListActivity extends RoboListActivity {
 
@@ -55,7 +54,6 @@ public class MessagesListActivity extends RoboListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Ln.v(username);
         setContentView(R.layout.activity_messages_list);
         messages = new ArrayList<>();
 
@@ -68,6 +66,7 @@ public class MessagesListActivity extends RoboListActivity {
                 boolean result = false;
                 PostAsyncTask postAsyncTask = new PostAsyncTask(MessagesListActivity.this, username, messageContentEditText.getText().toString(), false);
                 postAsyncTask.execute();
+                messageContentEditText.setText("");
             }
         });
 

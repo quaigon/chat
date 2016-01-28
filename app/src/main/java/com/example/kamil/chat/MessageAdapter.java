@@ -62,7 +62,7 @@ public class MessageAdapter extends BaseAdapter {
         Message message = getItem(position);
         viewHolder.messageTextView.setText(message.getText());
         viewHolder.userNameTextView.setText(message.getNickname());
-
+        viewHolder.dateTextView.setText(message.getDate());
 
         return view;
     }
@@ -71,11 +71,15 @@ public class MessageAdapter extends BaseAdapter {
     static class ViewHolder {
         private TextView userNameTextView;
         private TextView messageTextView;
+        private TextView dateTextView;
 
         public ViewHolder (View convertView) {
             userNameTextView = (TextView) convertView.findViewById(R.id.user_name);
             messageTextView = (TextView) convertView.findViewById(R.id.message_content);
+            dateTextView = (TextView) convertView.findViewById(R.id.date);
         }
+
+
 
     }
 
