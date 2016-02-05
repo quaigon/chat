@@ -14,7 +14,6 @@ public class Message {
     }
 
     public String getDate() {
-        Ln.w(date);
         return date;
     }
 

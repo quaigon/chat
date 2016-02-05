@@ -16,7 +16,6 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import roboguice.util.Ln;
 import roboguice.util.RoboAsyncTask;
 
 public class PostAsyncTask extends RoboAsyncTask<Boolean> {
@@ -24,7 +23,6 @@ public class PostAsyncTask extends RoboAsyncTask<Boolean> {
     private String nickName;
     private String message;
     private boolean newUser;
-    public static final String SERVERURL = "http://89.187.232.20:9000/EJBChatServlet/ServletMessage";
     Gson gson;
     public PostAsyncTask (Context context, String nickName, String message, boolean newUser) {
         super(context);
@@ -46,8 +44,11 @@ public class PostAsyncTask extends RoboAsyncTask<Boolean> {
         super.onSuccess(aBoolean);
     }
 
+
+
+
     private boolean doPost(String nickname, String message, boolean newUser)  throws IOException {
-        URL url = new URL (SERVERURL);
+        URL url = new URL (ConnectionService.SERVERURL);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setReadTimeout(10000);
         connection.setConnectTimeout(15000);
@@ -72,10 +73,11 @@ public class PostAsyncTask extends RoboAsyncTask<Boolean> {
         connection.getResponseCode();
         String res = readInputStreamToString(connection);
         Response response = gson.fromJson(res,Response.class);
-        Ln.v(response.isSuccess());
+
         return response.isSuccess();
 
     }
+
 
 
     private String readInputStreamToString(HttpURLConnection connection) {

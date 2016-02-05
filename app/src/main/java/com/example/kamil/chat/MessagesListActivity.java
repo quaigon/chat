@@ -63,7 +63,6 @@ public class MessagesListActivity extends RoboListActivity {
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean result = false;
                 PostAsyncTask postAsyncTask = new PostAsyncTask(MessagesListActivity.this, username, messageContentEditText.getText().toString(), false);
                 postAsyncTask.execute();
                 messageContentEditText.setText("");

@@ -11,6 +11,7 @@ import roboguice.inject.InjectView;
 
 public class MainActivity extends RoboActivity {
 
+
     @InjectView(R.id.signIn)
     private Button signInButton;
     @InjectView(R.id.enterName)
@@ -30,6 +31,8 @@ public class MainActivity extends RoboActivity {
                 Intent intent = new Intent(getApplicationContext(), MessagesListActivity.class);
                 String username = enternameEditText.getText().toString();
                 intent.putExtra("userName", username);
+
+
                 startService(startServiceIntent);
                 startActivity(intent);
             }

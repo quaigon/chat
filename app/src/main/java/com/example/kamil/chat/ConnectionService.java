@@ -7,8 +7,6 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
 
-import com.google.gson.Gson;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +18,7 @@ import java.net.URLConnection;
 public class ConnectionService extends Service{
 
     int mStartMode;
-    public static final String URLL = "http://89.187.232.20:9000/EJBChatServlet/ServletMessage";
+    public static final String SERVERURL = "http://89.187.232.20:9000/EJBChatServlet/ServletMessage";
 
 
     @Override
@@ -45,7 +43,7 @@ public class ConnectionService extends Service{
         @Override
         protected Void doInBackground(Void... params) {
             while (true ) {
-                String result = getOutputFromUrl(URLL);
+                String result = getOutputFromUrl(SERVERURL);
                 publishProgress(result);
             }
         }
