@@ -18,7 +18,7 @@ import java.net.URLConnection;
 public class ConnectionService extends Service{
 
     int mStartMode;
-    public static final String SERVERURL = "http://89.187.232.20:9000/EJBChatServlet/ServletMessage";
+    public static final String SERVERURL = "http://localhost:9000/EJBChatServlet/ServletMessage";
 
 
     @Override
